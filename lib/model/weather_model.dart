@@ -30,11 +30,14 @@ class WeatherModel{
     final currentWeatherData = map['list'][0];
 
     return WeatherModel(
-        currentTemp: currentWeatherData['main']['temp'],
-        currentSky: currentWeatherData['weather'][0]['main'],
-        currentPressure: currentWeatherData['main']['pressure'],
-        currentWindSpeed: currentWeatherData['wind']['speed'],
-        currentHumidity: currentWeatherData['main']['humidity']
+        currentTemp: (currentWeatherData['main']['temp'] as num) .toDouble(),
+        currentSky: (currentWeatherData['weather'][0]['main'] as String) .toString(),
+        currentPressure: (currentWeatherData['main']['pressure'] as num) .toDouble(),
+        currentWindSpeed: (currentWeatherData['wind']['speed'] as num) .toDouble(),
+        currentHumidity: (currentWeatherData['main']['humidity'] as num) .toDouble()
     );
   }
+  // final hourlyForecast = data['list'][index + 1];
+  // final hourlySky = data['list'][index + 1]['weather'][0]['main'];
+  // final hourlyTemp = hourlyForecast['main']['temp'].toString();
 }
