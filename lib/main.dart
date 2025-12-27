@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:weather_app/screens/weather_screen.dart';
+import 'package:weather_app/presentation/screen/weather_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
