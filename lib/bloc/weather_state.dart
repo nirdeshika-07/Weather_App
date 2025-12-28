@@ -5,7 +5,12 @@ sealed class WeatherState{}
 final class WeatherInitial extends WeatherState{}
 final class WeatherSuccess extends WeatherState{
   final WeatherModel weatherModel;
-  WeatherSuccess({required this.weatherModel});
+  final  List<Map<String, dynamic>> hourlyForecast;
+
+  WeatherSuccess({
+    required this.weatherModel,
+    required this.hourlyForecast,
+  });
 }
 final class WeatherFailure extends WeatherState{
   final String error;

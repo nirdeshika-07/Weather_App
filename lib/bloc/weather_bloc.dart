@@ -14,10 +14,10 @@ class WeatherBloc extends Bloc<WeatherEvent,WeatherState>{
     emit(WeatherLoading());
     try{
       final weather = await weatherRepository.getCurrentWeather();
-      emit(WeatherSuccess(weatherModel: weather));
+      final hourlyForecast = await weatherRepository.getHourlyWeatherList();
+      emit(WeatherSuccess(weatherModel: weather, hourlyForecast: hourlyForecast));
     }
     catch(e){
-      print('I reached here');
       emit(WeatherFailure(e.toString()));
     }
   }
